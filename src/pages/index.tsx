@@ -1,10 +1,10 @@
-import { RESAS_URL } from '@/lib/const/url'
+import { API_URL_PREFECTURE } from '@/lib/const/apiUrl'
 import { GetStaticProps, NextPage } from 'next'
 import { useErrorHandler } from 'react-error-boundary'
 
 export const getStaticProps: GetStaticProps = async () => {
   // 都道府県コード/名前を取得
-  const res = await fetch(RESAS_URL + '/api/v1/prefectures', {
+  const res = await fetch(API_URL_PREFECTURE, {
     headers: { 'x-api-key': process.env.API_KEY },
   })
   const json = await res.json()
