@@ -14,10 +14,10 @@ export const ErrorFallback: FC<FallbackProps> = ({ error, resetErrorBoundary }) 
         width={isWider(600) ? 300 : 200}
         height={isWider(600) ? 300 : 200}
       />
-      <div className={styles.text_section}>
-        <h3 className={styles.label}>エラーが発生しました</h3>
+      <section className={styles.text_section}>
+        <h3>エラーが発生しました</h3>
         <p className={styles.description}>時間を置いてもう一度お試しください。</p>
-      </div>
+      </section>
       <button onClick={resetErrorBoundary} className={styles.button}>
         再読み込み
       </button>

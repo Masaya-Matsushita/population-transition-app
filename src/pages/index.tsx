@@ -1,4 +1,3 @@
-import styles from '@/style/Home.module.css'
 import { useErrorHandler } from 'react-error-boundary'
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <div className={styles.title}>Hello World</div>
+      <div>Hello World</div>
       <button onClick={handleClick}>Throw Error</button>
     </>
   )
