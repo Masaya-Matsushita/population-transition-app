@@ -16,9 +16,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <title>人口推移確認アプリ</title>
       </Head>
       <Header />
-      <ErrorBoundary FallbackComponent={ErrorFallback} onError={onError}>
-        <Component {...pageProps} />
-      </ErrorBoundary>
+      <main>
+        <ErrorBoundary FallbackComponent={ErrorFallback} onError={onError}>
+          <Component {...pageProps} />
+        </ErrorBoundary>
+      </main>
     </>
   )
 }

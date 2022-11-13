@@ -1,0 +1,14 @@
+.wrapper {
+  margin: 2rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 800px) {
+  .wrapper {
+    margin: 4rem;
+  }
+}
