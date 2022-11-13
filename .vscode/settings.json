@@ -1,5 +1,8 @@
 {
+  // コード保存時、自動フォーマット(ESLint, Prettier)
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": ["source.fixAll.eslint"]
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
+  // 自動インポートの際、baseUrlに基づく絶対パスを優先
+  "javascript.preferences.importModuleSpecifier": "non-relative"
 }
