@@ -1,1 +1,5 @@
-export type Prefecture = { prefCode: number; prefName: string }
+export type Prefecture = {
+  prefCode: number
+  prefName: string
+  checked: boolean
+}
