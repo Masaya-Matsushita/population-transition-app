@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps<{ initPrefList: Prefecture[] }> = as
   }
 }
 
-const Home: NextPage = () => {
+const Home: NextPage<{ initPrefList: Prefecture[] }> = ({ initPrefList }) => {
   // const [prefList, setPrefList] = useState<Prefecture[]>(initPrefList)
 
   // デプロイ時のエラー調査用テストデータ
