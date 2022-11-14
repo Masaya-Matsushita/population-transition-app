@@ -12,17 +12,18 @@ export const getStaticProps = async () => {
   const json = await res.json()
 
   // checkedプロパティを追加
-  const initPrefList = await json.result.map((prefData: any) => {
-    return { ...prefData, checked: false }
-  })
+  // const initPrefList = await json.result.map((prefData: any) => {
+  //   return { ...prefData, checked: false }
+  // })
 
   return {
-    props: { initPrefList },
+    props: { initPrefList: json.result },
   }
 }
 
 const Home: NextPage<{ initPrefList: any }> = ({ initPrefList }) => {
   // const [prefList, setPrefList] = useState<Prefecture[]>(initPrefList)
+  console.log(initPrefList)
 
   // デプロイ時のエラー調査用テストデータ
   const foo = [
