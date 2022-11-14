@@ -4,7 +4,7 @@ import { GetStaticProps, NextPage } from 'next'
 import { useState } from 'react'
 import { PrefectureLayout } from '@/component/PrefectureLayout'
 
-export const getStaticProps: GetStaticProps<{ initPrefList: Prefecture[] }> = async () => {
+export const getStaticProps = async () => {
   // 都道府県コード/名前を取得
   const res = await fetch(API_URL_PREFECTURE, {
     headers: { 'x-api-key': process.env.API_KEY },
@@ -12,18 +12,16 @@ export const getStaticProps: GetStaticProps<{ initPrefList: Prefecture[] }> = as
   const json = await res.json()
 
   // checkedプロパティを追加
-  const initPrefList = await json.result.map(
-    (prefData: Pick<Prefecture, 'prefCode' | 'prefName'>) => {
-      return { ...prefData, checked: false }
-    },
-  )
+  const initPrefList = await json.result.map((prefData: any) => {
+    return { ...prefData, checked: false }
+  })
 
   return {
     props: { initPrefList },
   }
 }
 
-const Home: NextPage<{ initPrefList: Prefecture[] }> = ({ initPrefList }) => {
+const Home: NextPage<{ initPrefList: any }> = ({ initPrefList }) => {
   // const [prefList, setPrefList] = useState<Prefecture[]>(initPrefList)
 
   // デプロイ時のエラー調査用テストデータ
@@ -77,11 +75,7 @@ const Home: NextPage<{ initPrefList: Prefecture[] }> = ({ initPrefList }) => {
     { prefCode: 47, prefName: '沖縄県', checked: false },
   ]
 
-  return (
-    <>
-      <PrefectureLayout prefList={foo} />
-    </>
-  )
+  return <>{/* <PrefectureLayout prefList={foo} /> */}</>
 }
 
 export default Home
